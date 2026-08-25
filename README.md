@@ -1,21 +1,11 @@
 # Algoritmos y Estructuras de Datos — C++
 
-Repositorio individual para las actividades del curso, periodo julio–noviembre de 2026.
+Repositorio individual del curso, periodo julio–noviembre de 2026.
 
-## Estructura
+## Actividades
 
-- `include/algorithms.hpp`: declaraciones de funciones.
-- `src/algorithms.cpp`: implementación del alumno.
-- `src/main.cpp`: programa de ejemplo.
-- `tests/test_algorithms.cpp`: pruebas automáticas.
-- `.github/workflows/cpp-ci.yml`: compilación y pruebas en GitHub Actions.
+- [`actividad-07`](actividad-07/README.md): promedio de calificaciones con `std::vector` y GitHub Actions.
 
-## Compilar y probar
+Cada actividad tiene su propia carpeta, instrucciones, compilación y pruebas. Trabaja únicamente en los archivos que indique el `README.md` de la actividad correspondiente.
 
-```bash
-cmake -S . -B build
-cmake --build build
-ctest --test-dir build --output-on-failure
-```
-
-Cada cambio enviado a GitHub se compila y prueba automáticamente. No modifiques los archivos de pruebas salvo que la actividad lo indique.
+Cada cambio enviado a la rama `main` se revisa automáticamente mediante GitHub Actions.
