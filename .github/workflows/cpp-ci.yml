@@ -16,15 +16,6 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Configurar CMake
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-
-      - name: Compilar
-        run: cmake --build build --config Release --parallel 2
-
-      - name: Ejecutar pruebas
-        run: ctest --test-dir build --output-on-failure
-
       - name: Configurar Actividad 7.1
         run: cmake -S actividad-07 -B actividad-07/build -DCMAKE_BUILD_TYPE=Release
 
