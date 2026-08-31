@@ -1,0 +1,32 @@
+name: Pruebas C++ — Actividad 8
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: actividad-08-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Actividad 8
+        run: cmake -S actividad-08 -B actividad-08/build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Compilar Actividad 8
+        run: cmake --build actividad-08/build --config Release --parallel 2
+
+      - name: Ejecutar pruebas de Actividad 8
+        run: ctest --test-dir actividad-08/build --output-on-failure
+
