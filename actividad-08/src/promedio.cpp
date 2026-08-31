@@ -15,6 +15,7 @@ double calcularPromedio(const std::vector<double>& calificaciones) {
     }
 
     // TODO: usa calcularSuma y devuelve el promedio.
+    // Esto es un comentario intencional del profe.
     return 0.0;
 }
 
