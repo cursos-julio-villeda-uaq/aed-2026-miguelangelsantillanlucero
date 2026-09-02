@@ -1,4 +1,4 @@
-name: Pruebas C++ — Actividad 8
+name: Pruebas C++ — Actividad 9
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: actividad-08-${{ github.ref }}
+  group: actividad-09-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -20,13 +20,9 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
-
-      - name: Configurar Actividad 8
-        run: cmake -S actividad-08 -B actividad-08/build -DCMAKE_BUILD_TYPE=Release
-
-      - name: Compilar Actividad 8
-        run: cmake --build actividad-08/build --config Release --parallel 2
-
-      - name: Ejecutar pruebas de Actividad 8
-        run: ctest --test-dir actividad-08/build --output-on-failure
-
+      - name: Configurar Actividad 9
+        run: cmake -S actividad-09 -B actividad-09/build -DCMAKE_BUILD_TYPE=Release
+      - name: Compilar Actividad 9
+        run: cmake --build actividad-09/build --config Release --parallel 2
+      - name: Ejecutar pruebas de Actividad 9
+        run: ctest --test-dir actividad-09/build --output-on-failure
